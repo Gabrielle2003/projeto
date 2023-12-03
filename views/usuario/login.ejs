@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/login-style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Login usuário</title>
+</head>
+<body>
+    <div class="row align-items-center h-100 ">
+
+    <% if (status == 1) { %>
+        <div style="background-color: rgb(251, 164, 164);">Usuário com senha invalido!</div>
+    <%} %>
+    <% if (status == 2) { %>
+        <div style="background-color: rgb(250, 161, 78);">Usuário com email invalida!</div>
+    <%} %>
+
+      <div class="col-8 col-md-3 col-xs-8 mx-auto l-form">
+          <form method="post" action="/usuarios/login">
+              <div class="form-group">
+                  <input type="text" name="email" placeholder="Email" class="form-control i-form">
+              </div>
+              <div class="form-group">
+                  <input type="password" name="senha" placeholder="Senha" class="form-control i-form">
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-dark btn-md btn-block">Login</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</body>
+
+</html>

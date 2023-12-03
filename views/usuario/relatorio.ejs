@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de usuários</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <<link rel="stylesheet" href="/css/fachada.css">
+
+</head>
+<body class="fachada">
+    <div class="container">
+    <% if (status == 1) { %>
+        <div style="background-color: rgb(251, 243, 164);">Usuário cadastrado com sucesso!!!</div>
+    <%} %>
+            <% if (status == 2) { %>
+                <div style="background-color: rgb(243, 122, 122);">Usuário removido com sucesso!!!</div>
+        
+    <%} %>
+        <% if (status == 3) { %>
+            <div style="background-color: rgb(162, 241, 143);">Usuário atualizado com sucesso!!!</div>
+    
+<%} %>
+    <br>
+    <h3>Usuários </h3>
+    <div>
+        <!-- <div>Usuario cadastrado com sucesso!!!! </div> -->
+        
+        <table class="table table-striped">
+            <th>Nome</th>
+            <th>Id</th>
+            <th>E-mail</th>
+            <th>Senha</th>
+            <th>Detalhes</th>
+            <th>Remover</th>
+            <th>Atualizar</th>
+        
+    <% for (const usuario of usuarios){ %>
+        <tr>
+            
+        <td> 
+            <%= usuario.nome %> 
+        </td>
+
+        <td> 
+            <%= usuario.id %> 
+        </td>
+
+        <td> 
+            <%= usuario.email %> 
+        </td>
+
+        <td> 
+            <%= usuario.senha %> 
+        </td>
+
+
+        <td>    
+            <a href="/usuarios/<%= usuario.id %>" class="btn btn-warning">Detalhes</a>
+         </td>
+         <td>    
+            <a href="/usuarios/remover/<%= usuario.id %>"class="btn btn-danger" 
+                onclick="return confirm('Deseja realmente remover?')" >Remover</a>
+         </td>
+         <td>    
+            <a href="/usuarios/atualizar/<%= usuario.id %>" class="btn btn-success">Atualizar</a>
+         </td>
+        
+        
+    <br>
+
+        </tr>
+    <%} %>
+    </table>
+    
+    <a href="/">
+    <input type="button" class="btn btn-secondary" value="Índice">
+    </a>
+    
+    </body>
+
+<%- include("../partials/rodape.ejs")%>
+</html>

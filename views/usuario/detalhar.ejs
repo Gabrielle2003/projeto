@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do usuário</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/fachada.css">
+
+</head>
+<body class="fachada">
+
+    Usuário com o ID Específico <%= usuario.id %>
+    <div> 
+        <b>Nome:  </b><%= usuario.nome %> 
+    </div>
+    <div>
+        <b>E-mail:  </b><%= usuario.email %> 
+    </div>
+    <div>
+        <b>Senha: </b><%= usuario.senha %>
+    </div>
+    
+
+    <a href="/usuarios">
+        <input type="button" value="Voltar para índice"> 
+    </a>
+    
+</body>
+<%- include("../partials/rodape.ejs")%>
+</html>
