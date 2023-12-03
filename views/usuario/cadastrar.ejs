@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastramento de usuário</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/fachada.css">
+
+</head>
+<body class="fachada">
+    <div class="container">
+        <form action="/usuarios" method="post">
+
+          <input type="hidden" name="_id" value="<%= usuario.id %>">
+            <label for="id">Id</label>
+            <div class="input-group mb-3">
+                <input <% if(usuario.id != undefined){%> readonly<% } %> value="<%= usuario.id %>" required type="text" class="form-control" placeholder="Digite aqui" aria-label="Username"
+                name="id" id="id">
+              </div>
+    
+            <label for="nome">Nome</label>
+    
+            <div class="input-group mb-3">
+                <input value="<%= usuario.nome %>"required type="text" class="form-control" placeholder="Digite aqui" aria-label="Username"
+                name="nome" id="nome">
+              </div>
+
+        <label for="email">E-mail</label>
+
+        <div class="input-group mb-3">
+            <input value="<%= usuario.email %>"required type="text" class="form-control" placeholder="Digite aqui" aria-label="Username"
+            name="email" id="email">
+          </div>
+
+        <label for="senha">Senha</label>       
+        <div class="input-group mb-3">
+            <input value="<%= usuario.senha %>"required type="text" class="form-control" placeholder="Digite aqui" aria-label="Username"
+            name="senha" id="senha">
+          </div>
+
+          <div>
+            <input class="btn btn-success" type="submit" value="Atualizar">
+          </div>
+        
+    </form>
+    <a href="/">Índice</a>
+
+</div>
+</body>
+<%-include("../partials/rodape.ejs")%>
+</html>
