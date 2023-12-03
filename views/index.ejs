@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <%- include("partials/cabecalho.ejs")%>
+    <%- include("partials/menu.ejs")%>
+    
+    <link rel="stylesheet" href="/css/back.css">
+
+    <style>
+        /* Adicione uma nova classe btn-black com a cor preta */
+        .btn-black {
+            background-color: black;
+            color: white; /* Texto em branco para melhor legibilidade */
+            /* Adicione outros estilos conforme necessário */
+        }
+    </style>
+</head>
+<body class="back">
+<div>
+    <a href="/produtos">
+        <!-- Use a nova classe btn-black para o botão -->
+        <button type="button" class="button btn-black">Listagem de Produtos</button>
+    </a>
+    <a href="/produtos/cadastrar">
+        <button type="button" class="button btn-black">Cadastrar produto</button>
+    </a>
+</div>
+<div>
+    <a href="/vendedores">
+        <button type="button" class="button btn-black">Listagem de Vendedores</button>
+    </a>
+    <a href="/vendedores/cadastrar">
+        <button type="button" class="button btn-black">Cadastrar vendedor</button>
+    </a>
+</div>
+<div>
+    <a href="/usuarios">
+        <button type="button" class="button btn-black">Listagem de Usuários</button>
+    </a>
+    <a href="/usuarios/cadastrar">
+        <button type="button" class="button btn-black">Cadastrar usuários</button>
+    </a>
+</div>
+</body>    
+<%- include("partials/rodape.ejs")%>
+</html>
