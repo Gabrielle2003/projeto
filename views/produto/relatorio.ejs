@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de produtos</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/fachada.css">
+</head>
+<body class="fachada">
+    <div class="container">
+    <% if (status == 1) { %>
+        <div style="background-color: rgb(251, 243, 164);">Produto cadastrado com sucesso!!!</div>
+    <%} %>
+        <div class="container">
+            <% if (status == 2) { %>
+                <div style="background-color: rgb(243, 122, 122);">Produto removido com sucesso!!!</div>
+        
+    <%} %>
+    <div class="container">
+        <% if (status == 3) { %>
+            <div style="background-color: rgb(162, 241, 143);">Produto atualizado com sucesso!!!</div>
+    
+<%} %>
+    <br>
+    <h3>Produtos </h3>
+    <div>
+        <!-- <div>Produto cadastrado com sucesso!!!! </div> -->
+        
+        <table class="table table-striped">
+            <th>Nome</th>
+            <th>Id</th>
+            <th>Unidade de contagem</th>
+            <th>Quantidade</th>
+            <th>Detalhes</th>
+            <th>Remover</th>
+            <th>Atualizar</th>
+        
+    <% for (const produto of produtos){ %>
+        <tr>
+            
+        <td> 
+            <%= produto.nome %> 
+        </td>
+        <td>
+            <%= produto.id %>
+        </td>
+        <td> 
+            <%= produto.unidadeContagem %> 
+        </td>
+        <td> 
+            <%= produto.quantidade %> 
+        </td>
+
+
+        <td>    
+            <a class="btn btn-warning" href="/produtos/<%= produto.id %>">Detalhes</a>
+         </td>
+         <td>    
+
+            <a href="/produtos/remover/<%= produto.id %>"class="btn btn-danger" 
+                onclick="return confirm('Deseja realmente remover?')" >Remover</a>
+         </td>
+         <td>    
+            <a href="/produtos/atualizar/<%= produto.id %>" class="btn btn-success">Atualizar</a>
+         </td>
+        
+        
+    <br>
+
+        </tr>
+    <%} %>
+    </table>
+    
+    <a href="/">
+    <input type="button" class="btn btn-secondary" value="Índice">
+    </a>
+    
+    </body>
+
+<%- include("../partials/rodape.ejs")%>
+</html>
