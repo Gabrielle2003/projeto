@@ -1,0 +1,12 @@
+.fachada{
+    background-image: url("/img/fachada.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+  }

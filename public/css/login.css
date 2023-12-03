@@ -1,0 +1,17 @@
+body,html{
+    height: 100%; 
+    overflow: hidden;
+    background-image: url(https://i.pinimg.com/564x/b3/96/e1/b396e1fdae6b999c8e27f3c2bb726c5c.jpg);
+    background-size: cover;
+  }
+  
+  .l-form{
+    background-color:rgba(39, 41, 45, 0.5);
+    border-radius:12px;
+    padding: 12px;
+  }
+  
+  .i-form{
+    border-radius:12px;
+    padding: 12px;
+  }
